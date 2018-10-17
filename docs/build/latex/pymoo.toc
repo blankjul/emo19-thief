@@ -1,0 +1,9 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Implementations}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Algorithms}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Methods}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Usage}{2}{section.2}
+\contentsline {section}{\numberline {3}References}{3}{section.3}
+\contentsline {section}{\numberline {4}API}{3}{section.4}
+\contentsline {section}{\numberline {5}Contact}{3}{section.5}
+\contentsline {section}{References}{4}{section.5}

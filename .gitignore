@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+.idea/
+emo19-thief.iml
+
 # Log file
 *.log
 

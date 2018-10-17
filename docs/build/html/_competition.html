@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; pymoo 0.1.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pymoo
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul class="simple">
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pymoo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/_competition.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <blockquote>
+<div><dl class="docutils">
+<dt>Real-world optimization problems often consist of several NP-hard combinatorial optimization problems that interact with each other.</dt>
+<dd><p class="first">Such multi-component optimization problems are difficult to solve not only because of the contained hard optimization problems, but in particular,
+because of the interdependencies between the different components.
+Interdependence complicates a decision making by forcing each sub-problem to influence the quality and feasibility of solutions of the other sub-problems.
+This influence might be even stronger when one sub-problem changes the data used by another one through a solution construction process.
+Examples of multi-component problems are vehicle routing problems under loading constraints, the maximizing material utilization while respecting a production schedule,
+and the relocation of containers in a port while minimizing idle times of ships.&lt;br&gt;&lt;br&gt;</p>
+<p>The goal of this competition is to provide a platform for researchers in
+computational intelligence working on multi-component optimization problems.
+The main focus of this competition is on the combination of TSP and Knapsack problems.
+However, we plan to extend this competition format to more complex combinations of problems (that have typically been dealt with individually in the past decades) in the upcoming years.</p>
+<p>The set of benchmarks used in this competition follows the idea of the “Travelling Thief Problem” (Mohammad Reza Bonyadi, Zbigniew Michalewicz, Luigi Barone:
+&lt;a href=”<a class="reference external" href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6557681&amp;amp;tag=1">http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6557681&amp;amp;tag=1</a>” target=”_blank”&gt;The travelling thief problem: The first step in the transition from theoretical problems to realistic problems.&lt;/a&gt;
+IEEE Congress on Evolutionary Computation 2013: 1037-1044).
+Euclidian 2D Traveling Salesperson instances are combined with 0-1-Knapsack instances in such a way that it reflects aspects of problems from the real-world;
+for example, the total weight of the items in the knapsack influences the travel speed of a traveller.
+This introduced interdependence sets our benchmarks apart from capacitated vehicle routing problem instances, where this interdependence does not exist.
+For technical details on how the benchmarks were created, please see the &lt;a href=”2014gecco-ttp.pdf”&gt;manual&lt;/a&gt; (identical to the &lt;a target=”_blank” href=”<a class="reference external" href="http://dl.acm.org/citation.cfm?id=2598249">http://dl.acm.org/citation.cfm?id=2598249</a>”&gt;GECCO 2014 article “A comprehensive benchmark set and heuristics for the traveling thief problem”&lt;/a&gt;).&lt;br&gt;&lt;br&gt;</p>
+<p>Some related work (including approximate approaches, instance analyses, and code) can be found at the &lt;a target=”_blank” href=”<a class="reference external" href="http://cs.adelaide.edu.au/~optlog/research/ttp.php">http://cs.adelaide.edu.au/~optlog/research/ttp.php</a>”&gt;University of Adelaide’s TTP Project Page&lt;/a&gt;.&lt;br&gt;&lt;br&gt;</p>
+<p>All 9720 instances are available for researchers to experiment with: &lt;a target=”_blank” href=”<a class="reference external" href="http://cs.adelaide.edu.au/~optlog/CEC2014COMP_InstancesNew/">http://cs.adelaide.edu.au/~optlog/CEC2014COMP_InstancesNew/</a>”&gt;http://cs.adelaide.edu.au/~optlog/CEC2014COMP_InstancesNew/&lt;/a&gt;.</p>
+<p class="last">&lt;!–A range of sample instances is available for researchers to experiment with before the final submission.
+The samples will include instances with few/many cities, with uncorrelated/correlated profits and weights, and instances with further characteristics.&lt;br&gt;&lt;br&gt;–&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Julian Blank.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.2',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

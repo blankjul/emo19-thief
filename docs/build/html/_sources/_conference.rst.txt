@@ -1,0 +1,4 @@
+EMO 2019 is the 10th Edition of International Conference Series on Evolutionary Multi- Criterion Optimization (EMO), aiming to continue the success of previous EMO conferences. We will bring together both the EMO,
+multiple criteria decision-making (MCDM) communities, and other related fields and, moreover,
+focus on solving real-world problems in government, business and industry. Michigan is the birthplace of genetic algorithms research and EMO 2019 will plan on celebrating past 50 years of research and development in evolutionary computation and 10th edition of EMO conference series.
+                     
