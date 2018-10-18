@@ -82,6 +82,7 @@
 <li><a class="reference internal" href="#news">News</a></li>
 <li><a class="reference internal" href="#motivation">Motivation</a></li>
 <li><a class="reference internal" href="#competition">Competition</a></li>
+<li><a class="reference internal" href="#submission">Submission</a></li>
 <li><a class="reference internal" href="#problem">Problem</a><ul>
 <li><a class="reference internal" href="#traveling-salesman-problem-tsp">Traveling Salesman Problem (TSP)</a></li>
 <li><a class="reference internal" href="#knapsack-problem-knp">Knapsack Problem (KNP)</a></li>
@@ -180,7 +181,19 @@ The main focus of this competition is on the combination of TSP and Knapsack pro
 </div>
 <div class="section" id="competition">
 <h1>Competition<a class="headerlink" href="#competition" title="Permalink to this headline">¶</a></h1>
-<p>This competition aims to solve the Bi-objective Traveling Thief Problem for large instances.</p>
+<p>Instance which we select, representation</p>
+<p>how many non-dom par instance</p>
+<p>one page description of the approach#</p>
+<p>small getting starting
+github <a class="reference external" href="https://github.com/julesy89/emo19-thief">https://github.com/julesy89/emo19-thief</a></p>
+<p>no restriction on programming language or whatever</p>
+<p>Evaluation of the final results
+IGD, HV whatever</p>
+</div>
+<div class="section" id="submission">
+<h1>Submission<a class="headerlink" href="#submission" title="Permalink to this headline">¶</a></h1>
+<p>Start and deadline in bold</p>
+<p>How to submit solutions - format of solutions</p>
 </div>
 <div class="section" id="problem">
 <h1>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h1>
@@ -194,8 +207,8 @@ The goal is to minimize the total traveling time of the tour:</p>
  \begin{eqnarray}
      min &amp; &amp; f(\pi)  \\
      s.t. &amp; &amp;\pi = (\pi_1, \pi_2, ..., \pi_n) \in P_n \\[1mm]
-     f(\pi) &amp; = &amp; \sum_{i=1}^{n-1} \frac{ d_{\pi_i, \pi_{i+1}}}{v} \; +  \;
-     \frac{ d_{\pi_n, \pi_{1}}}{v}\nonumber
+     &amp; &amp;\pi_1 = 1 \\[1mm]
+     f(\pi) &amp; = &amp; \sum_{i=1}^{n-1} \frac{ d_{\pi_i, \pi_{i+1}}}{v} \; +  \; \frac{ d_{\pi_n, \pi_{1}}}{v}\nonumber
  \end{eqnarray}</div><p>There are <span class="math notranslate nohighlight">\(\frac{(n-1)!}{2}\)</span> different tours to consider,
 if we assume that the salesman has to start from the first city
 and travels on a symmetric map where <span class="math notranslate nohighlight">\(d_{i,j} = d_{j,i}\)</span>.</p>
@@ -249,13 +262,25 @@ In order to calculate the total tour time, the velocity at each city needs to be
 For calculating the velocity at each city the current weight of the knapsack must be given.
 Since both calculations are based on <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(z\)</span> is part of the knapsack subproblem, it is very hard to solve the problem.
 In fact, such problems are called interwoven systems as the solution of one subproblem highly depends on the solution of the other subproblems.</p>
-<p>Here, we leave the profit unchanged to be calculated as in the KNP problem by:</p>
+<p>Here, we leave the profit unchanged to be calculated as in the KNP problem.
+Finally, the TTP problem is defined by</p>
 <div class="math notranslate nohighlight">
  \begin{eqnarray}
+     min &amp; &amp; f(\pi, z)  \\
      max &amp; &amp; g(z) \\
-     \text{s.t.} &amp; &amp; \sum_{j=1}^m z_j \, w_j \leq Q\\
-     &amp; &amp; z = (z_1, .., z_m) \in \mathbb{B}^m\\
+
+     f(\pi, z) &amp; = &amp; \sum_{i=1}^{n-1} \frac{ d_{\pi_i, \pi_{i+1}}}{ v( w(i,\pi,z) )  }
+         \; + \; \; \frac{ d_{\pi_n, \pi_{1}}}{ v( w(n,\pi,z) )}  \\[1mm]
+
      g(z) &amp; = &amp; \sum_{j=1}^{m}  z_j \, b_j \\
+
+
+
+     s.t. &amp; &amp;\pi = (\pi_1, \pi_2, ..., \pi_n) \in P_n \\[1mm]
+     &amp; &amp; \pi_1 = 1 \\[1mm]
+     &amp; &amp; z = (z_1, .., z_m) \in \mathbb{B}^m\\
+     &amp; &amp; \sum_{j=1}^m z_j \, w_j \leq Q\\
+
  \end{eqnarray}</div><p>In order to illustrate the equations and interdependence, an example scenario is presented in the following.
 The thief starts at city <em>0</em> and has to visit city <em>{1, 2, 3}</em> exactly once and to return to city <em>0</em>.
 In this example each city provides one item and the thief could decide to steal item <span class="math notranslate nohighlight">\(I_j\)</span> or not.

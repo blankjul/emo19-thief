@@ -44,7 +44,39 @@ The main focus of this competition is on the combination of TSP and Knapsack pro
 Competition
 =============================================================
 
-This competition aims to solve the Bi-objective Traveling Thief Problem for large instances.
+
+Instance which we select, representation
+
+how many non-dom par instance
+
+one page description of the approach#
+
+
+small getting starting
+github https://github.com/julesy89/emo19-thief
+
+
+no restriction on programming language or whatever
+
+
+
+Evaluation of the final results
+IGD, HV whatever
+
+
+
+
+
+Submission
+=============================================================
+
+
+
+
+Start and deadline in bold
+
+How to submit solutions - format of solutions
+
 
 
 
@@ -71,8 +103,8 @@ The goal is to minimize the total traveling time of the tour:
     \begin{eqnarray}
         min & & f(\pi)  \\
         s.t. & &\pi = (\pi_1, \pi_2, ..., \pi_n) \in P_n \\[1mm]
-        f(\pi) & = & \sum_{i=1}^{n-1} \frac{ d_{\pi_i, \pi_{i+1}}}{v} \; +  \;
-        \frac{ d_{\pi_n, \pi_{1}}}{v}\nonumber
+        & &\pi_1 = 1 \\[1mm]
+        f(\pi) & = & \sum_{i=1}^{n-1} \frac{ d_{\pi_i, \pi_{i+1}}}{v} \; +  \; \frac{ d_{\pi_n, \pi_{1}}}{v}\nonumber
     \end{eqnarray}
 
 There are :math:`\frac{(n-1)!}{2}` different tours to consider,
@@ -163,17 +195,29 @@ Since both calculations are based on :math:`z` and :math:`z` is part of the knap
 In fact, such problems are called interwoven systems as the solution of one subproblem highly depends on the solution of the other subproblems.
 
 
-Here, we leave the profit unchanged to be calculated as in the KNP problem by:
+Here, we leave the profit unchanged to be calculated as in the KNP problem.
+Finally, the TTP problem is defined by
 
 
 .. math::
    :nowrap:
 
     \begin{eqnarray}
+        min & & f(\pi, z)  \\
         max & & g(z) \\
-        \text{s.t.} & & \sum_{j=1}^m z_j \, w_j \leq Q\\
-        & & z = (z_1, .., z_m) \in \mathbb{B}^m\\
+
+        f(\pi, z) & = & \sum_{i=1}^{n-1} \frac{ d_{\pi_i, \pi_{i+1}}}{ v( w(i,\pi,z) )  }
+            \; + \; \; \frac{ d_{\pi_n, \pi_{1}}}{ v( w(n,\pi,z) )}  \\[1mm]
+
         g(z) & = & \sum_{j=1}^{m}  z_j \, b_j \\
+
+
+
+        s.t. & &\pi = (\pi_1, \pi_2, ..., \pi_n) \in P_n \\[1mm]
+        & & \pi_1 = 1 \\[1mm]
+        & & z = (z_1, .., z_m) \in \mathbb{B}^m\\
+        & & \sum_{j=1}^m z_j \, w_j \leq Q\\
+
     \end{eqnarray}
 
 
