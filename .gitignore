@@ -1,7 +1,7 @@
 # Compiled class file
 *.class
 
-.DS_Store
+**/.DS_Store
 
 .idea/
 emo19-thief.iml
