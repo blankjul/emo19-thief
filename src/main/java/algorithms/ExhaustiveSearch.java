@@ -3,7 +3,6 @@ package algorithms;
 import model.NonDominatedSet;
 import model.Solution;
 import model.TravelingThiefProblem;
-import model.Util;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -23,7 +22,7 @@ public class ExhaustiveSearch implements Algorithm {
         NonDominatedSet nds = new NonDominatedSet();
 
         // index vector to permute
-        List<Integer> index = Util.getIndex(1, problem.numOfCities);
+        List<Integer> index = getIndex(1, problem.numOfCities);
 
         // over all possible tours
         for (List<Integer> pi : permute(index)) {
@@ -126,6 +125,15 @@ public class ExhaustiveSearch implements Algorithm {
             return -1;
         }
     }
+
+    private List<Integer> getIndex(int low, int high) {
+        List<Integer> l = new ArrayList<>();
+        for (int j = low; j < high; j++) {
+            l.add(j);
+        }
+        return l;
+    }
+
 
 
 

@@ -14,6 +14,9 @@ import java.util.List;
  */
 public class TravelingThiefProblem {
 
+    //! name of the problem - set if read from a file
+    public String name = "unknown";
+
     //! number of cities
     public int numOfCities = -1;
 
@@ -28,6 +31,9 @@ public class TravelingThiefProblem {
 
     // ! maximal weight of the knapsack
     public int maxWeight;
+
+    //! Renting Rate (not needed for multi-objective version)
+    public double R = -1.0;
 
     // ! coordinate where the salesman could visit cities
     public double[][] coordinates;

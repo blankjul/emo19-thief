@@ -229,3 +229,9 @@ More detailed studies of this objective space are done during this publication.
 .. image:: figures/example_exhaustive.svg
     :align: center
     :width: 700px
+
+
+
+Contact
+=============================================================
+
