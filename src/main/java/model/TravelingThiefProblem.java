@@ -24,13 +24,13 @@ public class TravelingThiefProblem {
     public int numOfItems = -1;
 
     // ! minimal speed of the salesman
-    public double minSpeed = 0.1;
+    public double minSpeed = -1;
 
     // ! maximal speed of the salesman
-    public double maxSpeed = 1.0;
+    public double maxSpeed = -1;
 
     // ! maximal weight of the knapsack
-    public int maxWeight;
+    public int maxWeight = -1;
 
     //! Renting Rate (not needed for multi-objective version)
     public double R = -1.0;
@@ -51,6 +51,9 @@ public class TravelingThiefProblem {
     private List<LinkedList<Integer>> itemsAtCity = null;
 
 
+    /**
+     * Initialize the problem by saving for each city the items to pick
+     */
     public void initialize() {
 
         // initialize the itemsAtCity data structure
@@ -64,9 +67,12 @@ public class TravelingThiefProblem {
 
     }
 
+    public Solution evaluate(List<Integer> pi, List<Boolean> z) {
+        return evaluate(pi, z, false);
+    }
 
 
-    public List<Double> evaluate(List<Integer> pi, List<Boolean> z) {
+    public Solution evaluate(List<Integer> pi, List<Boolean> z, boolean copy) {
 
         if (pi.size() != this.numOfCities || z.size() != this.numOfItems) {
             throw new RuntimeException("Wrong input for traveling thief evaluation!");
@@ -117,9 +123,21 @@ public class TravelingThiefProblem {
 
         }
 
+        // create the final solution object
+        Solution s = new Solution();
+        if (copy) {
+            s.pi = new ArrayList<>(pi);
+            s.z = new ArrayList<>(z);
+        } else {
+            s.pi = pi;
+            s.z = z;
+        }
+        s.time = time;
+        s.profit = profit;
+        s.singleObjective = profit - this.R * time;
+        s.objectives =  Arrays.asList(time, -profit);
 
-        // return the objective values
-        return Arrays.asList(time, -profit);
+        return s;
 
     }
 

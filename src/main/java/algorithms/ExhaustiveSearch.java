@@ -39,8 +39,8 @@ public class ExhaustiveSearch implements Algorithm {
                     for (int j = 0; j < problem.numOfItems; j++) z.add(false);
                     for (int j : combination.next()) z.set(j, true);
 
-                    List<Double> objectives = problem.evaluate(pi,z);
-                    nds.add(new Solution(pi,z,objectives, true));
+                    Solution s = problem.evaluate(pi,z, true);
+                    nds.add(s);
 
 
                 }

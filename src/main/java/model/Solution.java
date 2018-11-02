@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,30 +14,23 @@ public class Solution {
     public List<Boolean> z;
 
     //! the time the thief needed for traveling
-    public double time;
+    public double time = -1.0;
 
     //! the profit the thief made on that tour
-    public double profit;
+    public double profit = -1.0;
+
+    //! objective value if you want to solve the single-objective problem using R
+    public double singleObjective = -1.0;
 
     //! the objective values of the function
     public List<Double> objectives;
 
 
-    public Solution(List<Integer> pi, List<Boolean> z, List<Double> objectives, boolean copy) {
-        if (!copy) {
-            this.pi = pi;
-            this.z = z;
-            this.objectives = objectives;
-        } else {
-            this.pi = new ArrayList<>(pi);
-            this.z = new ArrayList<>(z);
-            this.objectives = new ArrayList<>(objectives);
-        }
-        this.time = objectives.get(0);
-        this.profit = -objectives.get(1);
-
-    }
-
+    /**
+     * This is used for non-dominated sorting and returns the dominance relation
+     * @param other solution to compare with
+     * @return returns 1 if dominates, -1 if dominated and 0 if indifferent
+     */
     public int getRelation(Solution other) {
         int val = 0;
         for (int i = 0; i < objectives.size(); i++) {
@@ -57,12 +49,13 @@ public class Solution {
 
     }
 
+    /**
+     * @param other solution to compare with
+     * @return True if tour and packing plan is equal
+     */
     public boolean equalsInDesignSpace(Solution other) {
         return pi.equals(other.pi) && z.equals(other.z);
     }
 
-    @Override
-    public int hashCode() {
-        return objectives != null ? objectives.hashCode() : 0;
-    }
+
 }

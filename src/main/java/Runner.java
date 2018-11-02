@@ -1,5 +1,5 @@
 import algorithms.Algorithm;
-import algorithms.RandomLocalSearch;
+import algorithms.ExhaustiveSearch;
 import model.Solution;
 import model.TravelingThiefProblem;
 
@@ -26,13 +26,24 @@ class Runner {
             TravelingThiefProblem problem = Util.readProblem(pathToFile);
             problem.name = instance;
 
-            // use the algorithm to solve the problem and return a set of solutions
-            Algorithm algorithm = new RandomLocalSearch(Competition.numberOfSolutions(problem));
-            //Algorithm algorithm = new ExhaustiveSearch();
+            // number of solutions that will be finally necessary for submission - not used here
+            int numOfSolutions = Competition.numberOfSolutions(problem);
+
+            // initialize your algorithm
+            //Algorithm algorithm = new RandomLocalSearch(500);
+            Algorithm algorithm = new ExhaustiveSearch();
+
+            // use it to to solve the problem and return the non-dominated set
             List<Solution> nds = algorithm.solve(problem);
 
             // sort by time and printSolutions it
             nds.sort(Comparator.comparing(a -> a.time));
+
+            System.out.println(nds.size());
+            for(Solution s : nds) {
+                System.out.println(s.time + " " + s.profit);
+            }
+
             //Util.printSolutions(nds, false);
             System.out.println(problem.name + " " + nds.size());
             Util.writeSolutions("results", Competition.TEAM_NAME, problem, nds);

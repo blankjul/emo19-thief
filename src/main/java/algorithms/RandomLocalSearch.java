@@ -18,7 +18,7 @@ import java.util.List;
 public class RandomLocalSearch implements Algorithm {
 
     //! number of randomly created tours
-    private int maxNumOfTrials = 1000;
+    private int maxNumOfTrials = 100;
 
     //! only do search on this tour
     private List<Integer> pi = null;
@@ -56,8 +56,8 @@ public class RandomLocalSearch implements Algorithm {
             }
 
             // evaluate for this random tour
-            List<Double> objectives = problem.evaluate(pi,z);
-            nds.add(new Solution(pi,z,objectives, true));
+            Solution s = problem.evaluate(pi,z, true);
+            nds.add(s);
             ++counter;
 
             // this is the order of items we will try to add to generated a new non-dominated point
@@ -79,8 +79,8 @@ public class RandomLocalSearch implements Algorithm {
                     weight += problem.weight[item];
 
                     // evaluate and update the non-dominated solutions
-                    objectives = problem.evaluate(pi,z);
-                    nds.add(new Solution(pi,z,objectives, true));
+                    s = problem.evaluate(pi,z, true);
+                    nds.add(s);
 
                     // increase the function evaluation counter
                     ++counter;
