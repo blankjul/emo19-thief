@@ -18,17 +18,17 @@ First, the repository needs to be clone from github:
 
     git clone https://github.com/julesy89/emo19-thief
     
-Feel free to use the IDE of you choice.
+Feel free to use the IDE of your choice and execute or modify classes.
 
 
 Structure
 ------------------------------------------------------------
 
-In the following the project structure and most important classes are explained:
+In the following the project structure is explained:
 
 ::
 
-    project
+    emo19-thief
     ├── Runner.java: Execute an algorithm on all competition instance and to save the file in the derired format.
     ├── Competition.java: Contains the instance names to be solved and the maximum limit of solutions to submit.
     ├── model          
@@ -45,11 +45,13 @@ In the following the project structure and most important classes are explained:
 Getting Started
 ------------------------------------------------------------
 
-Please have a look at our implementations ExhaustiveSearch and RandomLocalSearch. The project should provide a starting point to get familiar with the problem itself and prototype quickly new ideas.
+Please have a look at our implementations of ExhaustiveSearch and RandomLocalSearch. The project should provide a starting point to get familiar with the problem and prototype quickly new ideas.
 However, for this competition you have the freedom to use whatever you need, e.g. speed up the evaluation function, reimplement the problem in C, ...
 
 Again, the competition details can be found `Here 
 <https://www.egr.msu.edu/coinlab/blankjul/emo19-thief/>`_.
+
+
 
 
 
