@@ -4,6 +4,7 @@ import model.Solution;
 import model.TravelingThiefProblem;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -21,9 +22,10 @@ class Runner {
         for (String instance : instanceToRun) {
 
             // readProblem the problem from the file
-            String fname = String.format("%s.txt", instance);
-            String pathToFile = LOADER.getResource(fname).getFile();
-            TravelingThiefProblem problem = Util.readProblem(pathToFile);
+            String fname = String.format("resources/%s.txt", instance);
+            InputStream is = LOADER.getResourceAsStream(fname);
+
+            TravelingThiefProblem problem = Util.readProblem(is);
             problem.name = instance;
 
             // number of solutions that will be finally necessary for submission - not used here

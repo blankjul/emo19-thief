@@ -1,10 +1,7 @@
 import model.Solution;
 import model.TravelingThiefProblem;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -74,12 +71,12 @@ public abstract class Util {
     }
 
 
-	public static TravelingThiefProblem readProblem(String pathToFile) throws IOException {
+	public static TravelingThiefProblem readProblem(InputStream is) throws IOException {
 
         TravelingThiefProblem problem = new TravelingThiefProblem();
 
-        FileReader in = new FileReader(pathToFile);
-        BufferedReader br = new BufferedReader(in);
+        Reader reader = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(reader);
 
         String line = br.readLine();
         while(line != null){

@@ -67,11 +67,23 @@ public class TravelingThiefProblem {
 
     }
 
+
+    /**
+     * See evaluate(pi,z,copy). Per default pi and z are not copied.
+     */
     public Solution evaluate(List<Integer> pi, List<Boolean> z) {
         return evaluate(pi, z, false);
     }
 
-
+    /**
+     * The evaluation function of the problem to simulate the tour of the thief.
+     * @param pi the tour
+     * @param z the packing plan
+     * @param copy if true the returned solution object has a copy of the tour and packing plan - otherwise
+     *             just a reference. Be careful here, if you change the tour afterwards, the result will not match finally.
+     *
+     * @return A solution objective containing
+     */
     public Solution evaluate(List<Integer> pi, List<Boolean> z, boolean copy) {
 
         if (pi.size() != this.numOfCities || z.size() != this.numOfItems) {

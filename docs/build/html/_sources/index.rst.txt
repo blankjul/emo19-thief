@@ -45,39 +45,45 @@ Competition
 =============================================================
 
 
-Instance which we select, representation
+For example code please have a look at our java implementation `here <github https://github.com/julesy89/emo19-thief>`_.
+You can find inforation about how to get started there as well.
 
-how many non-dom par instance
+The nine test instances and the desired number of non-dominated solutions for the competition will be the following:
 
-one page description of the approach#
+=====  =====  =====
+#      n      instance
+=====  =====  =====
+1      100    a280_n279_bounded-strongly-corr_01
+2      100    a280_n1395_uncorr-similar-weights_05
+3      100    a280_n2790_uncorr_10
+4      50     fnl4461_n4460_bounded-strongly-corr_01
+5      50     fnl4461_n22300_uncorr-similar-weights_05
+6      50     fnl4461_n44600_uncorr_10
+7      20     pla33810_n33809_bounded-strongly-corr_01
+8      20     pla33810_n169045_uncorr-similar-weights_05
+9      20     pla33810_n338090_uncorr_10
+=====  =====  =====
 
-
-small getting starting
-github https://github.com/julesy89/emo19-thief
-
-
-no restriction on programming language or whatever
-
-
-
-Evaluation of the final results
-IGD, HV whatever
-
-
+For the output submission format please have a look at our example implementation on Github.
+The Java project should provide a starting point to get familiar with the problem and prototype quickly new ideas.
+However, for this competition you have the freedom to use whatever you need, e.g. speed up the evaluation function,
+reimplement the problem in C, ...
 
 
 
 Submission
 =============================================================
 
+Please submit your solution until
 
+**20th February, 2019**
 
+You can submit by simply sending an email to
 
-Start and deadline in bold
+blankjul@egr.msu.edu
 
-How to submit solutions - format of solutions
-
-
+with the subject: EMO2019 Competition - Traveling Thief Submission
+and provide as a link where we are able to download your results.
 
 
 
