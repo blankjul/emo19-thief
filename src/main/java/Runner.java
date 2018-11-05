@@ -32,7 +32,7 @@ class Runner {
             int numOfSolutions = Competition.numberOfSolutions(problem);
 
             // initialize your algorithm
-            //Algorithm algorithm = new RandomLocalSearch(500);
+            //Algorithm algorithm = new RandomLocalSearch(100);
             Algorithm algorithm = new ExhaustiveSearch();
 
             // use it to to solve the problem and return the non-dominated set
