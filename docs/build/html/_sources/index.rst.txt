@@ -45,7 +45,7 @@ Competition
 =============================================================
 
 
-For example code please have a look at our java implementation `here <github https://github.com/julesy89/emo19-thief>`_.
+For example code please have a look at our Java implementation `here <github https://github.com/julesy89/emo19-thief>`_.
 You can find inforation about how to get started there as well.
 
 The nine test instances and the desired number of non-dominated solutions for the competition will be the following:
@@ -145,7 +145,7 @@ After explaining the two components separately, the interdependence and the diff
 
 
 
-The Traveling Thief Problem combines the above defined subproblems and let them interact together. The traveling thief can collect items from each city he is visiting. The items are stored in a knapsack carried by him. In more detail,
+The Traveling Thief Problem combines the above defined subproblems and lets them interact with each other. The traveling thief can collect items from each city he is visiting. The items are stored in a knapsack carried by him. In more detail,
 each city :math:`\pi_i` provides one or multiple items, which could be picked by the thief. There is an interaction between the subproblems:
 The velocity of the traveling thief depends on the current knapsack weight :math:`w`, which is carried by him. It is calculated by considering all cities, which were visited so far, and summing up the weights of all picked items. The weight at city :math:`i` given :math:`\pi` and :math:`z` is calculated by:
 
@@ -197,7 +197,7 @@ This function takes the current weight, which depends on the index :math:`i` of 
 The current weight, and therefore also the velocity, will change on the tour by considering the picked items defined by :math:`z`.
 In order to calculate the total tour time, the velocity at each city needs to be known.
 For calculating the velocity at each city the current weight of the knapsack must be given.
-Since both calculations are based on :math:`z` and :math:`z` is part of the knapsack subproblem, it is very hard to solve the problem.
+Since both calculations are based on :math:`z` and :math:`z` is part of the knapsack subproblem, it is very challenging to solve the problem to optimality. 
 In fact, such problems are called interwoven systems as the solution of one subproblem highly depends on the solution of the other subproblems.
 
 

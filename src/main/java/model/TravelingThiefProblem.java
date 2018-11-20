@@ -33,7 +33,7 @@ public class TravelingThiefProblem {
     public int maxWeight = -1;
 
     //! Renting Rate (not needed for multi-objective version)
-    public double R = -1.0;
+    public double R = Double.POSITIVE_INFINITY;
 
     // ! coordinate where the salesman could visit cities
     public double[][] coordinates;
@@ -55,6 +55,12 @@ public class TravelingThiefProblem {
      * Initialize the problem by saving for each city the items to pick
      */
     public void initialize() {
+
+        // make the checks to avoid wrong parameters for the problem
+        if (numOfCities == -1 || numOfItems == -1 || minSpeed == -1 || maxSpeed == -1|| maxWeight == -1
+                || R == Double.POSITIVE_INFINITY)
+            throw new RuntimeException("Error while loading problem. Some variables are not initialized");
+
 
         // initialize the itemsAtCity data structure
         this.itemsAtCity = new ArrayList<>(this.numOfCities);

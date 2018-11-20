@@ -181,7 +181,7 @@ The main focus of this competition is on the combination of TSP and Knapsack pro
 </div>
 <div class="section" id="competition">
 <h1>Competition<a class="headerlink" href="#competition" title="Permalink to this headline">¶</a></h1>
-<p>For example code please have a look at our java implementation <a class="reference external" href="githubhttps://github.com/julesy89/emo19-thief">here</a>.
+<p>For example code please have a look at our Java implementation <a class="reference external" href="githubhttps://github.com/julesy89/emo19-thief">here</a>.
 You can find inforation about how to get started there as well.</p>
 <p>The nine test instances and the desired number of non-dominated solutions for the competition will be the following:</p>
 <table border="1" class="docutils">
@@ -283,7 +283,7 @@ The search space of this problem contains <cite>2^n</cite> combinations and the 
 <h2>Traveling Thief Problem (TTP)<a class="headerlink" href="#traveling-thief-problem-ttp" title="Permalink to this headline">¶</a></h2>
 <p>The TTP is a combinatorial optimization problem that consists of two interweaving problems such as TSP and KNP.
 After explaining the two components separately, the interdependence and the different models of the problem are described.</p>
-<p>The Traveling Thief Problem combines the above defined subproblems and let them interact together. The traveling thief can collect items from each city he is visiting. The items are stored in a knapsack carried by him. In more detail,
+<p>The Traveling Thief Problem combines the above defined subproblems and lets them interact with each other. The traveling thief can collect items from each city he is visiting. The items are stored in a knapsack carried by him. In more detail,
 each city <span class="math notranslate nohighlight">\(\pi_i\)</span> provides one or multiple items, which could be picked by the thief. There is an interaction between the subproblems:
 The velocity of the traveling thief depends on the current knapsack weight <span class="math notranslate nohighlight">\(w\)</span>, which is carried by him. It is calculated by considering all cities, which were visited so far, and summing up the weights of all picked items. The weight at city <span class="math notranslate nohighlight">\(i\)</span> given <span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(z\)</span> is calculated by:</p>
 <div class="math notranslate nohighlight">
@@ -314,7 +314,7 @@ This function takes the current weight, which depends on the index <span class="
 The current weight, and therefore also the velocity, will change on the tour by considering the picked items defined by <span class="math notranslate nohighlight">\(z\)</span>.
 In order to calculate the total tour time, the velocity at each city needs to be known.
 For calculating the velocity at each city the current weight of the knapsack must be given.
-Since both calculations are based on <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(z\)</span> is part of the knapsack subproblem, it is very hard to solve the problem.
+Since both calculations are based on <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(z\)</span> is part of the knapsack subproblem, it is very challenging to solve the problem to optimality.
 In fact, such problems are called interwoven systems as the solution of one subproblem highly depends on the solution of the other subproblems.</p>
 <p>Here, we leave the profit unchanged to be calculated as in the KNP problem.
 Finally, the TTP problem is defined by</p>

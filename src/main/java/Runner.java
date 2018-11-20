@@ -3,6 +3,7 @@ import algorithms.ExhaustiveSearch;
 import model.Solution;
 import model.TravelingThiefProblem;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -46,8 +47,11 @@ class Runner {
                 System.out.println(s.time + " " + s.profit);
             }
 
-            //Util.printSolutions(nds, false);
+            Util.printSolutions(nds, true);
             System.out.println(problem.name + " " + nds.size());
+
+            File dir = new File("results");
+            if (!dir.exists()) dir.mkdirs();
             Util.writeSolutions("results", Competition.TEAM_NAME, problem, nds);
 
 

@@ -78,7 +78,7 @@ Please submit your solution until
 
 **20th February, 2019**
 
-You can submit by simply sending an email to
+You can submit by sending an email to
 
 blankjul@egr.msu.edu
 

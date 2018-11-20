@@ -62,8 +62,10 @@ public abstract class Util {
                 System.out.print(String.join(" ",
                         solution.pi.stream().map(Object::toString).collect(Collectors.toList())));
 
+                System.out.print(" , ");
                 System.out.print(String.join(" ",
                         solution.z.stream().map(b -> b ? "1" : "0").collect(Collectors.toList())));
+                System.out.print(" ");
 
             }
             System.out.println(String.format("%.2f %.2f", solution.time, solution.profit));
