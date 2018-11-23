@@ -26,6 +26,7 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
 
@@ -82,7 +83,6 @@
 <li><a class="reference internal" href="#news">News</a></li>
 <li><a class="reference internal" href="#motivation">Motivation</a></li>
 <li><a class="reference internal" href="#competition">Competition</a></li>
-<li><a class="reference internal" href="#submission">Submission</a></li>
 <li><a class="reference internal" href="#problem">Problem</a><ul>
 <li><a class="reference internal" href="#traveling-salesman-problem-tsp">Traveling Salesman Problem (TSP)</a></li>
 <li><a class="reference internal" href="#knapsack-problem-knp">Knapsack Problem (KNP)</a></li>
@@ -181,7 +181,7 @@ The main focus of this competition is on the combination of TSP and Knapsack pro
 </div>
 <div class="section" id="competition">
 <h1>Competition<a class="headerlink" href="#competition" title="Permalink to this headline">¶</a></h1>
-<p>For example code please have a look at our Java implementation <a class="reference external" href="githubhttps://github.com/julesy89/emo19-thief">here</a>.
+<p>For example code please have a look at our Java implementation <a class="reference external" href="https://github.com/julesy89/emo19-thief">here</a>.
 You can find inforation about how to get started there as well.</p>
 <p>The nine test instances and the desired number of non-dominated solutions for the competition will be the following:</p>
 <table border="1" class="docutils">
@@ -239,14 +239,9 @@ You can find inforation about how to get started there as well.</p>
 The Java project should provide a starting point to get familiar with the problem and prototype quickly new ideas.
 However, for this competition you have the freedom to use whatever you need, e.g. speed up the evaluation function,
 reimplement the problem in C, …</p>
-</div>
-<div class="section" id="submission">
-<h1>Submission<a class="headerlink" href="#submission" title="Permalink to this headline">¶</a></h1>
 <p>Please submit your solution until</p>
-<p><strong>20th February, 2019</strong></p>
-<p>You can submit by simply sending an email to</p>
-<p><a class="reference external" href="mailto:blankjul&#37;&#52;&#48;egr&#46;msu&#46;edu">blankjul<span>&#64;</span>egr<span>&#46;</span>msu<span>&#46;</span>edu</a></p>
-<p>with the subject: EMO2019 Competition - Traveling Thief Submission
+<p class="center"><strong>20th February, 2019</strong></p>
+<p>by sending an email to <a class="reference external" href="mailto:blankjul&#37;&#52;&#48;egr&#46;msu&#46;edu">blankjul<span>&#64;</span>egr<span>&#46;</span>msu<span>&#46;</span>edu</a> with the subject: <strong>EMO2019 Competition - Traveling Thief Submission</strong>
 and provide as a link where we are able to download your results.</p>
 </div>
 <div class="section" id="problem">
@@ -336,38 +331,44 @@ Finally, the TTP problem is defined by</p>
      &amp; &amp; \sum_{j=1}^m z_j \, w_j \leq Q\\
 
  \end{eqnarray}</div><p>In order to illustrate the equations and interdependence, an example scenario is presented in the following.
-The thief starts at city <em>0</em> and has to visit city <em>{1, 2, 3}</em> exactly once and to return to city <em>0</em>.
-In this example each city provides one item and the thief could decide to steal item <span class="math notranslate nohighlight">\(I_j\)</span> or not.
-For the further example we use a zero index based notation for the vectors <span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(z\)</span> and the first city is at index <em>0</em>.</p>
+The thief starts at city 1 and has to visit city 2, 3, 4 exactly once and to return to city 1.
+In this example, each city provides one item and the thief must decide to steal item or not.</p>
 <a class="reference internal image-reference" href="_images/scenario.svg"><div align="center" class="align-center"><img alt="_images/scenario.svg" src="_images/scenario.svg" width="400px" /></div>
 </a>
 <p>A permutation vector, which contains all cities exactly once, and a binary picking vector are needed to calculate the objectives.
-Even though, this is a very small example with four cities and four items the solution space consists of <span class="math notranslate nohighlight">\((n-1)! \cdot 2^m = 6 \cdot 16 = 96\)</span> combinations.</p>
-<p>In order to understand how the objectives are calculated, an example hand calculation for the tour <em>[0,2,1,3]</em> and the packing plan <em>[0,1,0,1]</em> is done as follows:
-The thief starts with the maximum velocity, because the knapsack is empty. He begins his tour at city <em>0</em> and picks no item there.</p>
-<p>For an empty knapsack <span class="math notranslate nohighlight">\(w(0,\pi,z) = 0\)</span> the velocity is <span class="math notranslate nohighlight">\(v(0) = v_{max} = 1.0\)</span>. The distance from city <em>0</em> to city <em>2</em> is <cite>:math:9.0</cite> and the thief needs <span class="math notranslate nohighlight">\(9.0\)</span> time units.
-At city <em>2</em> the thief will not pick an item and continue to travel to city 1 with <span class="math notranslate nohighlight">\(w(1,\pi,z) = 0\)</span> and therefore with <span class="math notranslate nohighlight">\(v_{max}\)</span> in additional <span class="math notranslate nohighlight">\(5.0\)</span> time units.
-Here he picks item <span class="math notranslate nohighlight">\(I_1\)</span> with <cite>w_1 = 30</cite> and the current weight becomes <span class="math notranslate nohighlight">\(w(2,\pi,z) = 30\)</span>,
+Even though, this is a very small example with four cities and three items the solution space consists of <span class="math notranslate nohighlight">\((n-1)! \cdot 2^m = 6 \cdot 8 = 48\)</span> combinations.</p>
+<p>In order to understand how the objectives are calculated, an example hand calculation for the tour <em>[1,3,2,4]</em> and the packing plan <em>[1,0,1]</em> is done as follows:
+The thief starts with the maximum velocity, because the knapsack is empty. He begins his tour at city <em>1</em> and picks no item there.</p>
+<p>For an empty knapsack <span class="math notranslate nohighlight">\(w(1,\pi,z) = 0\)</span> the velocity is <span class="math notranslate nohighlight">\(v(0) = v_{max} = 1.0\)</span>. The distance from city <em>1</em> to city <em>3</em> is <span class="math notranslate nohighlight">\(9.0\)</span> and the thief needs <span class="math notranslate nohighlight">\(9.0\)</span> time units.
+At city <em>3</em> the thief will not pick an item and continue to travel to city <em>2</em> with <span class="math notranslate nohighlight">\(w(2,\pi,z) = 0\)</span> and therefore with <span class="math notranslate nohighlight">\(v_{max}\)</span> in additional <span class="math notranslate nohighlight">\(5.0\)</span> time units.
+Here he picks item <em>1</em> with <span class="math notranslate nohighlight">\(w_1 = 30\)</span> and the current weight becomes <span class="math notranslate nohighlight">\(w(2,\pi,z) = 30\)</span>,
 which means the velocity will be reduced to <span class="math notranslate nohighlight">\(v(30) = 1.0 - (\frac{1.0 - 0.1}{80}) \cdot 30 = 0.6625\)</span>.
-For traveling from city 1 to city 3 the thief needs the distance divided by the current velocity <span class="math notranslate nohighlight">\(\frac{5.0}{0.6625} \approx 7.5472\)</span>.
-At city 3 he picks <span class="math notranslate nohighlight">\(I_3\)</span> with <span class="math notranslate nohighlight">\(w_3 = 21\)</span> and the current knapsack weight increases to <span class="math notranslate nohighlight">\(w(3,\pi,z) = 30 + 21 = 51\)</span>.
+For traveling from city <em>2</em> to city <em>4</em> the thief needs the distance divided by the current velocity <span class="math notranslate nohighlight">\(\frac{5.0}{0.6625} \approx 7.5472\)</span>.
+At city <em>4</em> he picks item <em>3</em> with <span class="math notranslate nohighlight">\(w_3 = 21\)</span> and the current knapsack weight increases to <span class="math notranslate nohighlight">\(w(4,\pi,z) = 30 + 21 = 51\)</span>.
 For this reason the velocity decreases to <span class="math notranslate nohighlight">\(v(51) = 1.0 - (\frac{1.0 - 0.1}{80}) \cdot 51 = 0.42625\)</span>.
-For returning to city 0 the thief needs according to this current speed <span class="math notranslate nohighlight">\(\frac{3.0}{0.42625} \approx 7.0381\)</span> time units.
-Finally, we sum up the time for traveling from each city to the next <span class="math notranslate nohighlight">\(\sum_{k=0}^{n-1} t_{\pi_k, \pi_{k+1}} = 9 + 5 + 7.5472 + 7.0381 = 28.5853\)</span> to calculate the whole traveling time.</p>
-<a class="reference internal image-reference" href="_images/calc_table.png"><img alt="_images/calc_table.png" class="align-center" src="_images/calc_table.png" style="width: 400px;" /></a>
-<p>The final profit is calculated by summing up the values of all items which is <span class="math notranslate nohighlight">\(34 + 25 = 59\)</span>. So the variable <em>[0,2,1,3]</em> <em>[0,1,0,1]</em> is mapped to the point <span class="math notranslate nohighlight">\((28.59, 59.0)\)</span> in the objective space.
-The Pareto front contains 10 solutions and our hand calculation is printed bold at Table~ref{tbl:example_front}.</p>
-<a class="reference internal image-reference" href="_images/front_table.png"><img alt="_images/front_table.png" class="align-center" src="_images/front_table.png" style="width: 400px;" /></a>
-<p>Additionally, the figure below shows the objective space colored by tour.
-The vertical line denoted by <span class="math notranslate nohighlight">\(f(\pi,z)^*\)</span> illustrates solutions where the time of the thief is minimized.
-Furthermore, all solutions on the horizontal line denoted by <span class="math notranslate nohighlight">\(- g(z)^*\)</span> have the maximum profit.
-More detailed studies of this objective space are done during this publication.</p>
-<a class="reference internal image-reference" href="_images/example_exhaustive.svg"><div align="center" class="align-center"><img alt="_images/example_exhaustive.svg" src="_images/example_exhaustive.svg" width="700px" /></div>
+For returning to city <em>1</em> the thief needs according to this current speed <span class="math notranslate nohighlight">\(\frac{3.0}{0.42625} \approx 7.0381\)</span> time units.
+Finally, we sum up the time for traveling from each city to the next <span class="math notranslate nohighlight">\(\sum_{k=1}^{4} t_{\pi_k, \pi_{k+1}} = 9 + 5 + 7.5472 + 7.0381 = 28.5853\)</span> to calculate the whole traveling time.</p>
+<a class="reference internal image-reference" href="_images/scenario_table.svg"><div align="center" class="align-center"><img alt="_images/scenario_table.svg" src="_images/scenario_table.svg" width="500px" /></div>
+</a>
+<p>The final profit is calculated by summing up the values of all items which is <span class="math notranslate nohighlight">\(34 + 25 = 59\)</span>. So the variable <em>[1,3,2,4]</em> <em>[1,0,1]</em> is mapped to the point <span class="math notranslate nohighlight">\((28.59, 59.0)\)</span> in the objective space.
+Below you can find all pareto-optimal solutions of this example. The Pareto front contains 8 solutions and our hand calculation is printed bold.</p>
+<a class="reference internal image-reference" href="_images/scenario_front.svg"><div align="center" class="align-center"><img alt="_images/scenario_front.svg" src="_images/scenario_front.svg" width="300px" /></div>
+</a>
+<p>Additionally, the figure below shows the objective space colored by tour. As it can be observed pareto-optimal solutions
+can have different underlying tours. Please also not that the point where no items are picked consists of two different solutions
+with a symmetric tour. Also, the Pareto front is non-convex.</p>
+<a class="reference internal image-reference" href="_images/scenario_obj_space.svg"><div align="center" class="align-center"><img alt="_images/scenario_obj_space.svg" src="_images/scenario_obj_space.svg" width="400px" /></div>
 </a>
 </div>
 </div>
 <div class="section" id="contact">
 <h1>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">Julian Blank (blankjul [at] egr.msu.edu)</div>
+<div class="line">Michigan State University</div>
+<div class="line">Computational Optimization and Innovation Laboratory (COIN)</div>
+<div class="line">East Lansing, MI 48824, USA</div>
+</div>
 </div>
 
 
