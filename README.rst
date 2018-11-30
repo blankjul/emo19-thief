@@ -12,13 +12,13 @@ Requirements
 Installation
 ------------------------------------------------------------
 
-First, the repository needs to be clone from github: 
+First, the repository needs to be cloned from GitHub: 
 
 .. code-block:: bash
 
     git clone https://github.com/julesy89/emo19-thief
     
-Feel free to use the IDE of your choice and execute or modify classes.
+Feel free to use the IDE of your choice.
 
 
 Structure
