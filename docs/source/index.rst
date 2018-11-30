@@ -18,7 +18,7 @@ focus on solving real-world problems in government, business and industry.
 News
 =============================================================
 
-**October 17, 2018:** We are happy to announce the competition will start *December 1st, 2018*.
+We are happy to announce the competition will start *December 1st, 2018*.
 
 
 
@@ -33,8 +33,8 @@ Such multi-component optimization problems are difficult to solve not only becau
 because of the interdependencies between the different components.
 Interdependence complicates a decision making by forcing each sub-problem to influence the quality and feasibility of solutions of the other sub-problems.
 This influence might be even stronger when one sub-problem changes the data used by another one through a solution construction process.
-Examples of multi-component problems are vehicle routing problems under loading constraints, the maximizing material utilization while respecting a production schedule,
-and the relocation of containers in a port while minimizing idle times of ships.
+Examples of multi-component problems are vehicle routing problems under loading constraints, maximizing material utilization while respecting a production schedule,
+and relocation of containers in a port while minimizing idle times of ships.
 
 The goal of this competition is to provide a platform for researchers in computational intelligence working on multi-component optimization problems.
 The main focus of this competition is on the combination of TSP and Knapsack problems. However, we plan to extend this competition format to more complex combinations of problems (that have typically been dealt with individually in the past decades) in the upcoming years.
@@ -44,38 +44,70 @@ The main focus of this competition is on the combination of TSP and Knapsack pro
 Competition
 =============================================================
 
-For example code please have a look at our Java implementation `here <https://github.com/julesy89/emo19-thief>`_.
-You can find inforation about how to get started there as well.
+The Traveling Thief Problem was originally proposed in  :cite:`first_steps`. If you like to know more about the problem
+origin we encourage you to read this paper as a starting point. The test problems used for this competition
+were proposed in :cite:`Polyakovskiy:2014:CBS:2576768.2598249`. We selected a representative set to cover
+varying scenarios for the traveling thief for this competition. The bi-objective traveling thief problem was discussed and investigated in
+:cite:`Blank:2017:SBT:3088676.3088680`.
 
-The nine test instances and the desired number of non-dominated solutions for the competition will be the following:
 
-=====  =====  =====
-#      n      instance
-=====  =====  =====
-1      100    a280_n279_bounded-strongly-corr_01
-2      100    a280_n1395_uncorr-similar-weights_05
-3      100    a280_n2790_uncorr_10
-4      50     fnl4461_n4460_bounded-strongly-corr_01
-5      50     fnl4461_n22300_uncorr-similar-weights_05
-6      50     fnl4461_n44600_uncorr_10
-7      20     pla33810_n33809_bounded-strongly-corr_01
-8      20     pla33810_n169045_uncorr-similar-weights_05
-9      20     pla33810_n338090_uncorr_10
-=====  =====  =====
+**How to get started**
 
-For the output submission format please have a look at our example implementation on Github.
-The Java project should provide a starting point to get familiar with the problem and prototype quickly new ideas.
+For guidance, a sample Java implementation is provided: `here <https://github.com/julesy89/emo19-thief>`_.
+You can find information about how to get started there as well. It should provide a starting point to get familiar
+with the problem and prototype quickly new ideas.
 However, for this competition you have the freedom to use whatever you need, e.g. speed up the evaluation function,
-reimplement the problem in C, ...
+reimplement the problem in other programming languages (e.g. C, Matlab, Python).
 
 
-Please submit your solution until
+**Test Instances**
+
+The nine test instances and the desired number of non-dominated solutions (column n) for the competition will be the following:
+
+
+====== ====== ================== ==============================================
+#      n      Name               Instance in :cite:`Polyakovskiy:2014:CBS:2576768.2598249`
+====== ====== ================== ==============================================
+1      100    a280_n279          a280_n279_bounded-strongly-corr_01
+2      100    a280_n1395         a280_n1395_uncorr-similar-weights_05
+3      100    a280_n2790         a280_n2790_uncorr_10
+4      50     fnl4461_n4460      fnl4461_n4460_bounded-strongly-corr_01
+5      50     fnl4461_n22300     fnl4461_n22300_uncorr-similar-weights_05
+6      50     fnl4461_n44600     fnl4461_n44600_uncorr_10
+7      20     pla33810_n33809    pla33810_n33809_bounded-strongly-corr_01
+8      20     pla33810_n169045   pla33810_n169045_uncorr-similar-weights_05
+9      20     pla33810_n338090   pla33810_n338090_uncorr_10
+====== ====== ================== ==============================================
+
+For simplicity, we shortened the file name of the selected instances. However, the original instances are annotated above.
+
+**Submission Format**
+
+To participate in the competition it is required to submit your solutions for ALL test problems.
+For each problem two files need to be submitted (i) one file that contains the tour and packing plan and (ii) one file
+that contains the time and profits for each corresponding solution. The filenames are supposed to be *<team>_<problem>.x*
+and *<team>_<problem>.f*.
+
+First, the file containing the tour and packing plan (*<team>_<problem>.x*) contains for each solution two lines where the
+first represents the permutation vector and the second line the packing plan encoded by 0 and 1. Then one empty line
+is added to separate one solution from another. An example output can be found `here <_static/MY-TEAM_test-example-n4.x>`_.
+
+Second the file containing the objective space values (*<team>_<problem>.f*) contains the corresponding time and profit
+separated by space. An example output can be found `here <_static/MY-TEAM_test-example-n4.f>`_.
+
+The test instances are included in the Github project and a method to run your algorithm on them already exists.
+
+
+**Submission**
+
+
+Deadline for this competition is the
 
 .. rst-class:: center
 
-    **20th February, 2019**
+    **20th February, 2019, Midnight, UTC-12**
 
-by sending an email to blankjul@egr.msu.edu with the subject: **EMO2019 Competition - Traveling Thief Submission**
+Please submit by sending an email to blankjul@egr.msu.edu with the subject: **EMO2019 Competition - Traveling Thief Submission**
 and provide as a link where we are able to download your results.
 
 
@@ -86,7 +118,7 @@ Problem
 =============================================================
 
 
-The traveling thief problem combines the Traveling Salesman Problem (TSP) and the Knapsack Problem (KNP). Both problems will be explained in the following.
+The traveling thief problem combines the Traveling Salesman Problem (TSP) and the Knapsack Problem (KNP). Both problems will be explained in the following sections.
 
 Traveling Salesman Problem (TSP)
 ---------------------------------------------
@@ -133,7 +165,7 @@ Traveling Thief Problem (TTP)
 ---------------------------------------------
 
 
-The TTP is a combinatorial optimization problem that consists of two interweaving problems such as TSP and KNP.
+The TTP is a combinatorial optimization problem that consists of two interweaving problems, TSP and KNP.
 After explaining the two components separately, the interdependence and the different models of the problem are described.
 
 
@@ -276,9 +308,24 @@ with a symmetric tour. Also, the Pareto front is non-convex.
 Contact
 =============================================================
 
-
 | Julian Blank (blankjul [at] egr.msu.edu)
 | Michigan State University
 | Computational Optimization and Innovation Laboratory (COIN)
 | East Lansing, MI 48824, USA
+
+| Markus Wagner (markus.wagner [at] adelaide.edu.au)
+| The University of Adelaide, Australia
+| Adelaide, SA 5005, Australia
+
+
+
+
+References
+==================================
+
+
+.. bibliography:: references.bib
+   :style: unsrt
+   :all:
+
 

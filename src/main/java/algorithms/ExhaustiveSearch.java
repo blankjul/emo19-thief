@@ -19,12 +19,13 @@ public class ExhaustiveSearch implements Algorithm {
 
     public List<Solution> solve(TravelingThiefProblem problem) {
 
+        // start form an empty set of non-dominated solutions
         NonDominatedSet nds = new NonDominatedSet();
 
         // index vector to permute
         List<Integer> index = getIndex(1, problem.numOfCities);
 
-        // over all possible tours
+        // iterate over all possible tours
         for (List<Integer> pi : permute(index)) {
 
             // make tour starting at city 0
@@ -32,13 +33,17 @@ public class ExhaustiveSearch implements Algorithm {
 
             // for all possible item combinations
             for (int i = 0; i <= problem.numOfItems; i++) {
+
+                // iterate over all combinations for items
                 Combination combination = new Combination(problem.numOfItems, i);
                 while (combination.hasNext()) {
 
+                    // create the corresponding packing plan from the combination
                     List<Boolean> z = new ArrayList<>(problem.numOfItems);
                     for (int j = 0; j < problem.numOfItems; j++) z.add(false);
                     for (int j : combination.next()) z.set(j, true);
 
+                    // evaluate the solution and add to non-dominated set
                     Solution s = problem.evaluate(pi,z, true);
                     nds.add(s);
 
