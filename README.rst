@@ -18,7 +18,7 @@ First, the repository needs to be cloned from GitHub:
 
     git clone https://github.com/julesy89/emo19-thief
 
-Feel free to use the IDE of your choice.
+Feel free to use the IDE of your choice and import the Maven Project.
 
 
 Structure
