@@ -166,7 +166,8 @@ focus on solving real-world problems in government, business and industry.</p>
 </div>
 <div class="section" id="news">
 <h1>News<a class="headerlink" href="#news" title="Permalink to this headline">¶</a></h1>
-<p>We are happy to announce the competition will start <em>December 1st, 2018</em>.</p>
+<p><strong>Jan 15, 2019</strong>: Minor modification of Util.writeSolutions to make the tour of the submission based on index 1 and not 0. Either submission format will be accepted.</p>
+<p><strong>Nov 26, 2018</strong>: We are happy to announce the competition will start <em>December 1st, 2018</em>.</p>
 </div>
 <div class="section" id="motivation">
 <h1>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h1>
@@ -194,7 +195,7 @@ with the problem and prototype quickly new ideas.
 However, for this competition you have the freedom to use whatever you need, e.g. speed up the evaluation function,
 reimplement the problem in other programming languages (e.g. C, Matlab, Python).</p>
 <p><strong>Test Instances</strong></p>
-<p>The nine test instances and the desired number of non-dominated solutions (column n) for the competition will be the following:</p>
+<p>The nine test instances:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="7%" />
@@ -257,7 +258,8 @@ reimplement the problem in other programming languages (e.g. C, Matlab, Python).
 </tr>
 </tbody>
 </table>
-<p>For simplicity, we shortened the file name of the selected instances. However, the original instances are annotated above.</p>
+<p>For simplicity, we shortened the file name of the selected instances. However, the original instances are annotated above.
+The column <strong>n</strong> represents the MAXIMUM number of non-dominated solutions being accepted for the submission for each test problem.</p>
 <p><strong>Submission Format</strong></p>
 <p>To participate in the competition it is required to submit your solutions for ALL test problems.
 For each problem two files need to be submitted (i) one file that contains the tour and packing plan and (ii) one file
@@ -274,6 +276,17 @@ separated by space. An example output can be found <a class="reference external"
 <p class="center"><strong>20th February, 2019, Midnight, UTC-12</strong></p>
 <p>Please submit by sending an email to <a class="reference external" href="mailto:blankjul&#37;&#52;&#48;egr&#46;msu&#46;edu">blankjul<span>&#64;</span>egr<span>&#46;</span>msu<span>&#46;</span>edu</a> with the subject: <strong>EMO2019 Competition - Traveling Thief Submission</strong>
 and provide as a link where we are able to download your results.</p>
+<p><strong>Evaluation</strong></p>
+<p>After having received all submissions, the evaluation will be done as follows:</p>
+<p><em>For each of the nine test problems</em></p>
+<ol class="loweralpha simple">
+<li>We will merge the solution sets of all submissions and extract the non-dominated set.</li>
+<li>The minimum in time and the maximum in profit will be used to determine the reference point.</li>
+<li>With respect to this reference point the quality of each submission will be measured using the hypervolume indicator.</li>
+<li>We will sort the submissions according to the achieved hypervolume in descending order and give points as follows: 1st place -&gt; 3 points, 2nd place -&gt; 2 points, 3rd place -&gt; 1 point.</li>
+</ol>
+<p>By adding up the points for each submission we will create the overall ranking.
+<em>Please note, that depending on the number of submissions the evaluation might need to be reconsidered.</em></p>
 </div>
 <div class="section" id="problem">
 <h1>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h1>

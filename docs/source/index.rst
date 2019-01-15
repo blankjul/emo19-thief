@@ -18,7 +18,9 @@ focus on solving real-world problems in government, business and industry.
 News
 =============================================================
 
-We are happy to announce the competition will start *December 1st, 2018*.
+**Jan 15, 2019**: Minor modification of Util.writeSolutions to make the tour of the submission based on index 1 and not 0. Either submission format will be accepted.
+
+**Nov 26, 2018**: We are happy to announce the competition will start *December 1st, 2018*.
 
 
 
@@ -62,7 +64,7 @@ reimplement the problem in other programming languages (e.g. C, Matlab, Python).
 
 **Test Instances**
 
-The nine test instances and the desired number of non-dominated solutions (column n) for the competition will be the following:
+The nine test instances:
 
 
 ====== ====== ================== ==============================================
@@ -80,6 +82,7 @@ The nine test instances and the desired number of non-dominated solutions (colum
 ====== ====== ================== ==============================================
 
 For simplicity, we shortened the file name of the selected instances. However, the original instances are annotated above.
+The column **n** represents the MAXIMUM number of non-dominated solutions being accepted for the submission for each test problem.
 
 **Submission Format**
 
@@ -111,6 +114,20 @@ Please submit by sending an email to blankjul@egr.msu.edu with the subject: **EM
 and provide as a link where we are able to download your results.
 
 
+
+**Evaluation**
+
+After having received all submissions, the evaluation will be done as follows:
+
+*For each of the nine test problems*
+
+a. We will merge the solution sets of all submissions and extract the non-dominated set.
+b. The minimum in time and the maximum in profit will be used to determine the reference point.
+c. With respect to this reference point the quality of each submission will be measured using the hypervolume indicator.
+d. We will sort the submissions according to the achieved hypervolume in descending order and give points as follows: 1st place -> 3 points, 2nd place -> 2 points, 3rd place -> 1 point.
+
+By adding up the points for each submission we will create the overall ranking.
+*Please note, that depending on the number of submissions the evaluation might need to be reconsidered.*
 
 
 

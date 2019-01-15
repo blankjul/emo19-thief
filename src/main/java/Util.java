@@ -4,6 +4,7 @@ import model.TravelingThiefProblem;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,9 +32,15 @@ public abstract class Util {
 
         for (Solution solution : solutions) {
 
+            // add one to the index of each city to match the index of the input format
+            List<Integer> modTour = new ArrayList<>(solution.pi);
+            for (int i = 0; i < modTour.size(); i++) {
+                modTour.set(i, modTour.get(i) + 1);
+            }
+
             // write the variables
             varBw.write(String.join(" ",
-                    solution.pi.stream().map(Object::toString).collect(Collectors.toList())) + "\n");
+                    modTour.stream().map(Object::toString).collect(Collectors.toList())) + "\n");
             varBw.write(String.join(" ",
                     solution.z.stream().map(b -> b ? "1" : "0").collect(Collectors.toList())) + "\n");
             varBw.write("\n");
