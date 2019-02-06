@@ -24,7 +24,7 @@ public class Verify {
         String folder = "results";
 
         String team = "MY-TEAM";
-        String instance = "fnl4461-n44600";
+        String instance = "a280-n279";
 
         // readProblem the problem from the file
         String fname = String.format("resources/%s.txt", instance);
@@ -90,6 +90,16 @@ public class Verify {
                 String[] vals = objectives[counter].split("\\s+");
                 double time = Double.valueOf(vals[0]);
                 double profit = Double.valueOf(vals[1]);
+
+                /*
+                Solution s = new Solution();
+                s.pi = pi;
+                s.z = z;
+                s.time = time;
+                s.profit = profit;
+                problem.verify(s);
+                */
+
 
                 double precision = 1e-8;
                 if (Math.abs(time - solution.time) > precision || Math.abs(profit - solution.profit) > precision) {
