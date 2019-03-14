@@ -3,11 +3,19 @@
 
 **/.DS_Store
 
-.idea/
+results/**/*.x
+
+
+.idea
+docs/build
+
 emo19-thief.iml
 
+*.pyc
+
+results/.ipynb_checkpoints
+
 target/
-results/
 
 # Log file
 *.log

@@ -3,6 +3,25 @@
    :caption: Contents:
 
 
+Ranking
+=============================================================
+
+We are very glad to finally make the results of this competition publicly available:
+
+**1st: JoMar (25 points) - Jonatas Batista Costa das Chagas and Marcone Jamilson Freitas Souza**
+
+2nd: shisunzhang (19 points) - Jialong Shi, Jianyong Sun, Qingfu Zhang
+
+3rd: ALLAOUI (8 points) - Mohcin Allaoui, Belaid Ahiod
+
+
+Congratulations to all of the winners! And even if you did not make it under the TOP3, I would like to thank you for the
+participation. Knowing some methods work better than others is only possible if a variety of submissions are compared.
+
+
+The evaluation is also available step by step `here <_static/evaluation.html>`_.
+
+
 EMO2019 - Conference
 =============================================================
 
@@ -17,6 +36,10 @@ focus on solving real-world problems in government, business and industry.
 
 News
 =============================================================
+
+**March 12, 2019**: The winner of this competition was announced. Congratulations team JoMar (Jonatas Batista Costa das Chagas and Marcone Jamilson Freitas Souza)
+
+**Feb 11, 2019**: Added Verify.java which allows you to make sure your submission files are in the correct format and x and f values map correctly.
 
 **Jan 15, 2019**: Minor modification of Util.writeSolutions to make the tour of the submission based on index 1 and not 0. Either submission format will be accepted.
 
@@ -109,6 +132,9 @@ Deadline for this competition is the
 .. rst-class:: center
 
     **20th February, 2019, Midnight, UTC-12**
+
+Before you submit please make sure to verify the correctness of your solutions using **Verify.java**
+(You might need to pull the latest version of the project).
 
 Please submit by sending an email to blankjul@egr.msu.edu with the subject: **EMO2019 Competition - Traveling Thief Submission**
 and provide as a link where we are able to download your results.
